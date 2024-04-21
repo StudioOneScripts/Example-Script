@@ -14,10 +14,6 @@ function userFunction()
 
 	this.performEdit = function (context)
 	{
-		var x = S1.getInstrumentRack()
-		getAllPropertyNames(x)
-		return;
-		
 		// get the track collection
 		const Tracks = S1.getTracks();
 
