@@ -1,0 +1,48 @@
+﻿include_file("functions.js");
+const kPackageID="example.script";
+
+function userFunction()
+{
+	this.interfaces =  [Host.Interfaces.IEditTask]
+
+	this.prepareEdit = function (context)
+	{
+		return Host.Results.kResultOk;
+	}
+
+	// -----------------------------------------------------------------
+
+	this.performEdit = function (context)
+	{
+		var x = S1.getInstrumentRack()
+		getAllPropertyNames(x)
+		return;
+		
+		// get the track collection
+		const Tracks = S1.getTracks();
+
+		// open the message window
+		S1.openWindow( "MessageWindow" );
+
+		/* 	iterate the track collection  
+			and print each track name to 
+			to the message window  	*/
+		for (const track of Tracks){
+			print(track.name)
+		}
+
+	
+
+		return Host.Results.kResultOk;
+	}
+
+}
+
+// ---------------------------------------------------------------------
+
+// entry function
+function createInstance()
+{
+	return new userFunction();
+}
+

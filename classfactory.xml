@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ClassFactory>
+	<ScriptClass
+		classID="{C99C2AFC-2590-DEE5-DD78-9D104D687CA1}"
+		category="EditTask"
+		subCategory="TrackEdit"
+		name="*** Example Script ***"
+		sourceFile="code.js"
+		functionName="createInstance">
+		<Attribute id="menuPriority" value="0"/>
+	</ScriptClass>
+</ClassFactory>
