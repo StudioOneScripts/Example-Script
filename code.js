@@ -27,8 +27,6 @@ function userFunction()
 			print(track.name)
 		}
 
-	
-
 		return Host.Results.kResultOk;
 	}
 
