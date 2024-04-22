@@ -30,14 +30,9 @@ function userFunction()
 			
 			// set all faders to -6.5
 			if(track.channel)
-			{
 				track.channel.volume = S1.dbToFloat("-6.5")
-			}
 		}
-
-		// set input gain on selected channels
-		// S1.setInputGain(1, 7.0)
-
+		
 		return Host.Results.kResultOk;
 	}
 }
