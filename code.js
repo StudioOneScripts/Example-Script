@@ -13,7 +13,7 @@ function userFunction()
 	// -----------------------------------------------------------------
 
 	this.performEdit = function (context)
-	{
+	{ 
 		// get the track collection
 		const Tracks = S1.getTracks();
 
@@ -30,9 +30,9 @@ function userFunction()
 			
 			// set all faders to -6.5
 			if(track.channel)
-				track.channel.volume = S1.dbToFloat("-6.5")
+				S1.setFaderLevel(track.channel,"-4.0")
 		}
-		
+
 		return Host.Results.kResultOk;
 	}
 }
