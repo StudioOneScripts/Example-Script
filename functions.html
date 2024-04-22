@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio One Functions</title>
+
+<style>
+
+   /* Style for header row */
+   th {
+        background-color: rgb(224, 230, 231); /* Set background color to black */
+        color: rgb(0, 0, 0); /* Set text color to light gray */
+        padding: 8px; /* Optional: Add padding for better readability */
+        font-family: Arial, sans-serif; font-size: 16px;
+        text-align: left;
+    }
+  table {
+    
+      border-collapse: collapse;
+        /* width: 100%; */
+    }
+    td {
+        border: 2px solid #ddd;
+        padding-left: 18px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: left;
+        font-family: Arial, sans-serif; font-size: 14px;/* Set your desired font here */
+    }
+
+    /* Apply background color on hover */
+    .highlightable:hover {
+        background-color: rgb(248, 248, 198);
+    }
+
+    /* Optional: Add transition for smooth effect */
+    .highlightable {
+        transition: background-color 0.3s ease;
+    }
+
+    /* Optional: Add styles for selected rows */
+    .selected {
+        background-color: yellow;
+    }
+
+   
+</style>
+</head>
+
+
+<body>
+<style>
+  code {
+      font-size: 14px; /* Set your desired font size */
+      font-family: monospace; /* Optional: Set a monospaced font */
+  }
+</style>
+
+<p style="font-family: Arial, sans-serif;  font-size: 16px; color: #333;">
+  
+  <b>&nbsp;&nbsp;&nbsp;include_file("functions.js")</b>
+
+   
+<!-- 
+***************************************
+              TABLE
+*************************************** 
+-->
+<table>
+  <colgroup>
+    <col style="width: 450px;"> <!-- Set width of first column -->
+    <col style="width: 450px;"> <!-- Set width of second column -->
+    <col style="width: 700px;"> <!-- Set width of second column -->
+  </colgroup>
+   <tr class="highlightable">
+    <th>Functions</th>
+    <th>Description</th>
+    <th>Examples</th>
+  </tr>
+
+  <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.closeHeaderTracks()</span></td>
+    <td>Closes all open headers, Tempo, Markers, etc</td>
+    <td> </td>
+  </tr>
+   <tr class="highlightable">
+      <td><span style="color: rgb(black); font-weight: bold;">.getInstrumentRack()</span></td>
+      <td>Returns the native synth rack object</td>
+      <td> </td>
+  </tr>
+  
+  <!-- 
+  ***************************************
+                TRACKS
+  *************************************** 
+  -->
+  <th  colspan="3">Tracks</th>
+  
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getTracks()</span></td>
+    <td>Returns an array of all tracks <br>
+    </td>
+    <td>
+      <code>const Tracks = S1.getTracks(); <br>
+        for (const track of Tracks){<br>
+        &nbsp;&nbsp;print(track.name)<br>
+        }
+      </code>
+  </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getSelectedTracks()</span></td>
+    <td>Returns an array of all selected tracks</td>
+    <td> </td>
+  </tr>
+
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getTrackList()</span></td>
+    <td>Returns the tracklist object</td>
+    <td> </td>
+  </tr>
+  <tr class="highlightable"> 
+    <td><span style="color: rgb(black); font-weight: bold;">.normalizeTrackNames()</span></td>
+    <td>Performs case normalizaton on all track names</td>
+    <td> </td>
+  </tr>
+  <tr class="highlightable"> 
+    <td><span style="color: rgb(black); font-weight: bold;">.normalizeTrackNames()</span></td>
+    <td>Performs case normalizaton on all track names</td>
+    <td> </td>
+  </tr>
+  <tr class="highlightable"> 
+    <td><span style="color: rgb(black); font-weight: bold;">.dbToFloat()</span></td>
+    <td>Comnverts a decibel value to floating point</td>
+    <td> </td>
+  </tr>
+  <tr class="highlightable"> 
+    <td><span style="color: rgb(black); font-weight: bold;">.floatToDb()</span></td>
+    <td>Converts a floating point value to decibel</td>
+    <td> </td>
+  </tr>
+  <!-- 
+  ***************************************
+              CHANNELS
+  *************************************** 
+  -->
+  <th  colspan="3">Channels</th>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getMixer()</span></td>
+    <td>Returns the mixer object</td>
+    <td> </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getMasterBus()</span></td>
+    <td>Returns the master bus object</td>
+    <td> </td>
+  </tr>
+
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getChannels()</span></td>
+    <td>Returns an array of all mixer channels</td>
+    <td>
+      <code>
+        const Channels = S1.getChannels();<br>
+        for (const channel of Channels){<br>
+        &nbsp;&nbsp;  print(channel.label)<br>
+        }
+      </code>
+    </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getSelectedChannels()</span></td>
+    <td>Returns an array of all selected mixer channels</td>
+    <td> </td>
+  </tr>
+
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getChannelList()</span></td>
+    <td>Returns the main channels object</td>
+    <td> </td>
+  </tr>
+
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.prefixMixerChannels()</span></td>
+    <td>Adds 3 digit sequential number prefixes to all mixer channels</td>
+    <td></td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.removeChannelPrefixes()</span></td>
+    <td>Removes the prefixes added by prefixMixerChannels()</span></td>
+    <td> </td>
+  </tr>
+
+
+  <!-- 
+  ***************************************
+              MIXER
+  *************************************** 
+  -->
+  <th  colspan="3">Mixer</th>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.resetMixer()</span></td>
+    <td>Resets most of the mixer parts outlined below.</td>
+    <td> </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.resetInputGain( <small>[integer]</small> )</span></td>
+    <td>Resets input gain to unity. 0=All 1=Selected</td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.resetPolarity( <small>[integer]</small> )</span></td>
+    <td>Resets channel polarity. 0=All 1=Selected</td>
+    <td> </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.resetPan( <small>[integer]</small> )</span></td>
+    <td>Resets pans to center. 0=All 1=Selected</td>
+    <td> </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.fadersToInfinity ( <small>[integer]</small> )</span></td>
+    <td>Reset faders to infinity gain. 0=All 1=Selected</td>
+    <td> </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.fadersToUnity( <small>[integer]</small> )</span></td>
+    <td>Resets faders to unity gain. 0=All 1=Selected</td>
+    <td> </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.resetVCA( <small>[integer]</small> )</span></td>
+    <td>Removes VCA assignments. 0=All 1=Selected</td>
+    <td> </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.resetSpeaker( <small>[integer]</small> )</span></td>
+    <td>Resets channel mode to stereo. 0=All 1=Selected</td>
+    <td> </td>
+  </tr>
+  <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.setInputGain( <small>value [integer]</small> )</span></td>
+    <td>Sets the input gain levels</td>
+    <td> </td>
+  </tr>
+  <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.setFaderLevel( <small>value [string]</small> )</span></td>
+    <td>Set fader levels</td>
+    <td> </td>
+  </tr>
+  <!-- 
+  ***************************************
+                WINDOWS
+  *************************************** 
+  -->
+  <th  colspan="3">Window Management</th>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.openWindow( <small>Name [string]</small></small> )</span></td>
+    <td>Opens the target window</td>
+    <td>S1.openWindow( "MessageWindow" ); </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.closeWindow( <small>Name [string]</small></small> )</span></td>
+    <td>Closes the target window</td>
+    <td> </td>
+  </tr>
+  <!-- 
+  ***************************************
+                MESSAGING
+  *************************************** 
+  -->
+  <th  colspan="3">Messaging </th>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">print( <small>Name [string]</small> )</span></td>
+    <td>Writes text to the Studio One messages window for debug </td>
+    <td>These are all raw functions, they're not part of the 'S1' object model</td>
+  </tr>
+
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">alert( <small>Name [string]</small> )</span></td>
+    <td>Writes text to a message box</td>
+    <td> </td>
+  </tr>
+
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">ask( <small>Name [string]</small> )</span></td>
+    <td>Asks the user a Yes/No question</td>
+    <td>
+      <code>let msg = "Do you really want to do that?"<br>
+      if (ask(msg) === 1) return; // selected 'No'</code>
+    </td>
+  </tr>
+
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">getAllPropertyNames( <small>[object]</small> )</span></td>
+    <td>Prints members of an object to the message window</td>
+    <td><code>getAllPropertyNames(S1)  // Show all of the functions in the S1 object</code></td>
+  </tr>
+
+   <!-- 
+  ***************************************
+              FILE IO
+  *************************************** 
+  -->
+  <th  colspan="3">File IO </th>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.writeXML( <small>rootName [string], data [array], url [Host.Url]</small> )</span></td>
+    <td>Writes a simple xml file for settings, etc.  </td>
+    <td>
+      <code>
+        S1.writeXML( "Settings", "My Folder Name", ["Test1, Value1. Test2, Value2"] ,"settings")
+      </code>
+    </td>
+  </tr>
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.readXML( <small>rootName [string], items [array], url [Host.Url]</small> )</span></td>
+    <td>Reads the simple xml file written by .writeXML()</span></td>
+    <td>
+      <code>
+        // returns the values from the attributes in an array
+
+        const values = S1.readXML("Settings", "My Folder Name", ["Test1","Test2"], "settings")
+      </code>
+    </td>
+  </tr>
+  <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.writeTextFile( <small>folder [string], filename [string], text [string] )</small> )</span></td>
+    <td>Reads the simple xml file written by .writeXML()</span></td>
+    <td>
+      <code>
+        S1.writeTextFile("My Settings","settings", [string array]) 
+      </code>
+    </td>
+  </tr>
+  <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.readTextFile( <small>folder [string], filename [string] )</small> )</span></td>
+    <td>Reads the simple xml file written by .writeXML()</span></td>
+    <td>
+      <code>
+        // read file into an array
+        const text = S1.readTextFile("My Settings","settings", [string array]) 
+      </code>
+    </td>
+  </tr>
+
+
+
+   <tr class="highlightable">
+    <td><span style="color: rgb(black); font-weight: bold;">.getLegalFileName( <small>fileName [string]</small> )</span></td>
+    <td>Removes any illegal characters from a file name</td>
+    <td></td>
+  </tr>
+</table>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const rows = document.querySelectorAll('.highlightable');
+  
+      rows.forEach(row => {
+          row.addEventListener('click', function() {
+              // Toggle 'selected' class on click
+              this.classList.toggle('selected');
+          });
+      });
+  });
+  </script>
+
+</body>
+</html>
