@@ -14,6 +14,11 @@ function userFunction()
 
 	this.performEdit = function (context)
 	{ 
+
+		const WM = Host.Objects.WindowManager;
+    	WM.openWindow("TagPalette");
+		return;
+
 		// get the track collection
 		const Tracks = S1.getTracks();
 
