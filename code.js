@@ -25,21 +25,18 @@ function userFunction()
 			to the message window  	*/
 		for (const track of Tracks){
 			
-			// print track names to console
+			// print track names to messge window
 			print(track.name)
 			
 			// set all faders to -6.5
 			if(track.channel)
 			{
-				
 				track.channel.volume = S1.dbToFloat("-6.5")
 			}
-				
-
-			// set input gains to +6.5
-			if (track.channel.find('InputFX'))	
-				track.channel.find('InputFX').findParameter('gain').value = 6.5;
 		}
+
+		// set input gain on selected channels
+		// S1.setInputGain(1, 7.0)
 
 		return Host.Results.kResultOk;
 	}
