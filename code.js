@@ -28,7 +28,7 @@ function userFunction()
 			// print track names to messge window
 			print(track.name)
 			
-			// set all faders to -6.5
+			// set faders to a value
 			if(track.channel)
 				S1.setFaderLevel(track.channel,"-4.0")
 		}
