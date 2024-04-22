@@ -29,7 +29,6 @@ function userFunction()
 
 		return Host.Results.kResultOk;
 	}
-
 }
 
 // ---------------------------------------------------------------------
@@ -39,4 +38,3 @@ function createInstance()
 {
 	return new userFunction();
 }
-
