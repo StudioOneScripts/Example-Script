@@ -25,12 +25,12 @@ function userFunction()
 			to the message window  	*/
 		for (const track of Tracks){
 			
-			// print track names to messge window
-			print(track.name)
-			
-			// set faders to a value
-			if(track.channel)
-				S1.setFaderLevel(track.channel,"-4.0")
+		// print track names to messge window
+		print(track.name)
+		
+		// set faders to a value
+		if(track.channel)
+			S1.setFaderLevel(track.channel,"-4.0")
 		}
 
 		return Host.Results.kResultOk;
