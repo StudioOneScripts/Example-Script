@@ -14,7 +14,6 @@ function userFunction()
 
 	this.performEdit = function (context)
 	{ 
-
 		// get the track collection
 		const Tracks = S1.getTracks();
 
